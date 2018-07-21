@@ -83,7 +83,10 @@ async def run_forever(address):
 
 
 def main():
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(
+        format='%(asctime)s %(levelname)-8s %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S',
+        level=logging.INFO)
     load_config()
 
     for command in config.COMMANDS.split() + COMMANDS_ALWAYS_LOAD:
