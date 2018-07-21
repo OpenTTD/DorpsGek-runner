@@ -8,7 +8,8 @@ class ConfigurationEmpty(Exception):
 
 
 def post_load_config():
-    pass
+    if not os.path.exists(config.WORKING_FOLDER):
+        os.makedirs(config.WORKING_FOLDER, exist_ok=True)
 
 
 def load_config():
