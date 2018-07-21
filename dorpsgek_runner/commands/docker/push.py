@@ -10,5 +10,5 @@ log = logging.getLogger(__name__)
 async def docker_push(event, ws):
     image_name = f"{event.data['name']}:{event.data['tag']}".lower()
 
-    log.info("Pushing new image {image_name} to repository ...")
+    log.info("Pushing new image %s to repository ...", image_name)
     await run_command(f"docker push {image_name}")
